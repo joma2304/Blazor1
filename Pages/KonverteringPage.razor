@@ -1,0 +1,18 @@
+@page "/konvertering" 
+
+<h1>Konvertering</h1>
+
+@code {
+    // Variabler för meter och fot
+    int meter = 0;
+    int foot = 0;
+
+    // Konverteringar
+    float footToMeter => meter * 0.3048f; // 1 fot till meter
+    float meterToFoot => foot * 3.281f;  // 1 meter till fot
+}
+
+<p><InputNumber @bind-Value="meter" /> meter är lika med @footToMeter fot.</p>
+<p><InputNumber @bind-Value="foot" /> fot är lika med @meterToFoot meter.</p>
+
+

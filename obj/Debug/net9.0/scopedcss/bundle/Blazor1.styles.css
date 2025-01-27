@@ -1,0 +1,133 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+*[b-6qz7penpw7] {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* /Layout/NavMenu.razor.rz.scp.css */
+/*navigeringsmenyn */
+.header[b-vi08qbaqp9] {
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    background-color: #c1c1c1;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease;
+}
+
+.header-container[b-vi08qbaqp9] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo[b-vi08qbaqp9] {
+    max-width: 125px;
+}
+
+.nav ul[b-vi08qbaqp9] {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li[b-vi08qbaqp9] {
+    display: inline;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.nav li a[b-vi08qbaqp9] {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.nav li a:hover[b-vi08qbaqp9] {
+    color: gray;
+}
+
+nav .active[b-vi08qbaqp9]  {
+    color: gray;
+    text-decoration: underline;
+}
+
+/* Media queries för responsiv design */
+@media screen and (max-width: 768px) {
+
+    /*Nav-Meny*/
+    .header-container[b-vi08qbaqp9] {
+        padding: 0 2px;
+    }
+
+    .logo[b-vi08qbaqp9] {
+        max-width: 100px;
+    }
+
+    .nav ul[b-vi08qbaqp9] {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        background-color: #c1c1c1;
+        padding: 40px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .nav li[b-vi08qbaqp9] {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-toggle[b-vi08qbaqp9] {
+        display: block !important;
+        position: relative;
+        z-index: 1000;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .nav-toggle span[b-vi08qbaqp9] {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1)[b-vi08qbaqp9] {
+        transform: rotate(45deg) translate(6px, 5px);
+    }
+
+    .nav-toggle.active span:nth-child(2)[b-vi08qbaqp9] {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3)[b-vi08qbaqp9] {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .nav-toggle.active span[b-vi08qbaqp9] {
+        background-color: black;
+    }
+
+    .nav-toggle.active[b-vi08qbaqp9] {
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
+
+    .nav ul.active[b-vi08qbaqp9] {
+        display: flex;
+    }
+
+}
