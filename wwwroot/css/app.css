@@ -4,7 +4,7 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/*Header*/
 .header {
     background-color: #e0e0e0;
 }
@@ -44,7 +44,11 @@
     color: gray;
 }
 
-/* Responsiv design */
+.nav-list .active {
+    text-decoration: underline;
+}
+
+/* Responsivitet navmeny */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -61,6 +65,89 @@
     .nav-list li {
         margin: 0.5rem 0;
     }
+}
+
+/*Rubriker*/
+h1 {
+    text-align: center;
+    font-size: 1.6em;
+}
+/* Huvudcontainer för alla sidor */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* konvertering */
+.conversion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* labels */
+.label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* input-fält */
+.input-field {
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/*Resultat */
+.result-text {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/*Styling json sida*/
+.user-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.user-img {
+    width: 80px;
+    height: auto;
+    border-radius: 40px;
+}
+
+.user-card p {
+    margin: 1px 0;
 }
 
 #blazor-error-ui {

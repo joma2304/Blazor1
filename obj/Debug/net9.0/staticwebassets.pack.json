@@ -25,10 +25,6 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
-      "Id": "/Users/johanmagnusson/Desktop/Webbutveckling med .NET/Blazor1/wwwroot/js/main.js",
-      "PackagePath": "staticwebassets/js/main.js"
-    },
-    {
       "Id": "/Users/johanmagnusson/Desktop/Webbutveckling med .NET/Blazor1/wwwroot/logotyp2.png",
       "PackagePath": "staticwebassets/logotyp2.png"
     },

@@ -1,3 +1,60 @@
 @page "/json"
+@inject HttpClient Http
 
-<h1>JSON</h1>
+@code {
+    private User[]? user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // anrop
+        var response = await Http.GetFromJsonAsync<RandomUserResponse>("https://randomuser.me/api/?results=3"); //3 st användare
+        user = response?.Results; // Tilldela reslúltat till user
+    }
+
+    // Modell för användare
+    public class User
+    {
+        public Name? Name { get; set; } // För att hämta namn
+        public string? Email { get; set; } // Mail
+        public Picture? Picture { get; set; } // Bild
+    }
+
+    // Modell för Namn
+    public class Name
+    {
+        public string? First { get; set; } //Namn
+        public string? Last { get; set; } //efternamn
+    }
+
+    // Modell för Bild
+    public class Picture
+    {
+        public string? Large { get; set; } //Stor bild
+    }
+
+    // Modell för svar från API med random användare
+    public class RandomUserResponse
+    {
+        public User[]? Results { get; set; }
+    }
+}
+
+<div class="content-container">
+    <h1>JSON</h1>
+    <h3>Laddar in 3 st random användare från random-user API:</h3>
+
+    @if (user == null) {
+        <p>Laddar....</p>
+    } else {
+        <div>
+            @foreach (var user in user)
+            {
+                <div class="user-card">
+                    <img src="@user.Picture?.Large" alt="Bild på användare" class="user-img"/> <br>
+                    <p><strong>@user.Name?.First @user.Name?.Last</strong></p> <br>
+                    <p>Email: @user.Email</p>
+                </div>
+            }
+        </div>
+    }
+</div>

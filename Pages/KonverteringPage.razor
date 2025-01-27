@@ -1,18 +1,45 @@
 @page "/konvertering" 
 
-<h1>Konvertering</h1>
-
 @code {
     // Variabler för meter och fot
-    int meter = 0;
-    int foot = 0;
+    int meter = 0; //0 som standard
+    int foot = 0; //0 som standard
 
-    // Konverteringar
-    float footToMeter => meter * 0.3048f; // 1 fot till meter
-    float meterToFoot => foot * 3.281f;  // 1 meter till fot
+    // Konverteringar med avrundning till 2 decimaler
+    double footToMeter => Math.Round(foot * 0.3048f, 2); //fot till meter
+    double meterToFoot => Math.Round(meter * 3.28084f, 2);  //meter till fot
+
+        // Variabler för meter och fot
+    int km = 0; //0 som standard
+    int miles = 0; //0 som standard
+
+    // Konverteringar med avrundning till 2 decimaler
+    double kmToMiles => Math.Round(km * 0.621371f); // km till miles
+    double milesToKm => Math.Round(miles * 1.60934f);  //miles till km
 }
 
-<p><InputNumber @bind-Value="meter" /> meter är lika med @footToMeter fot.</p>
-<p><InputNumber @bind-Value="foot" /> fot är lika med @meterToFoot meter.</p>
+<div class="content-container">
+    <h1>Konvertering</h1>
+    <div class="conversion-item">
+        <label for="meterInput" class="label">Ange meter:</label>
+        <InputNumber id="meterInput" @bind-Value="meter" class="input-field" />
+        <p class="result-text">@meter meter är lika med <strong>@meterToFoot</strong> fot.</p>
+    </div>
+    <div class="conversion-item">
+        <label for="footInput" class="label">Ange fot:</label>
+        <InputNumber id="footInput" @bind-Value="foot" class="input-field" />
+        <p class="result-text">@foot fot är lika med <strong>@footToMeter</strong> meter.</p>
+    </div>
+        <div class="conversion-item">
+        <label for="kmInput" class="label">Ange km/h:</label>
+        <InputNumber id="kmInput" @bind-Value="km" class="input-field" />
+        <p class="result-text">@km km/h är lika med <strong>@kmToMiles</strong> mph.</p>
+    </div>
+        <div class="conversion-item">
+        <label for="milesInput" class="label">Ange mph:</label>
+        <InputNumber id="milesInput" @bind-Value="miles" class="input-field" />
+        <p class="result-text">@miles mph är lika med <strong>@milesToKm</strong> km/h.</p>
+    </div>
+</div>
 
 
