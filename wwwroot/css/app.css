@@ -137,7 +137,7 @@ h1 {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ebebeb;
     transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
@@ -150,6 +150,7 @@ h1 {
     width: 80px;
     height: auto;
     border-radius: 40px;
+    border: 2px solid black;
 }
 
 .user-card p {
